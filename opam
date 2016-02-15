@@ -1,0 +1,18 @@
+opam-version: "1.2"
+name: "globalalignment"
+version: "0.1"
+maintainer: "Julian Brown <jules@panic.cs-bristol.org.uk>"
+authors: "Julian Brown <jules@panic.cs-bristol.org.uk>"
+homepage: "https://github.com/puppeh/globalalignment"
+build: [
+  ["ocaml" "setup.ml" "-configure" "--prefix" "%{prefix}%"]
+  ["ocaml" "setup.ml" "-build"]
+]
+license: "GPL3.0"
+dev-repo: "https://github.com/puppeh/globalalignment"
+bug-reports: "Julian Brown <jules@panic.cs-bristol.org.uk>"
+install: ["ocaml" "setup.ml" "-install"]
+remove: ["ocamlfind" "remove" "globalalignment"]
+depends: [
+  "ocamlfind" {build}
+]

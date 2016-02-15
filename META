@@ -1,0 +1,12 @@
+# OASIS_START
+# DO NOT EDIT (digest: e6f81b10c6bcaa4a3e89727d7586e8fc)
+version = "0.1"
+description =
+"Implementation of global alignment algorithms for general arrays"
+archive(byte) = "globalalignment.cma"
+archive(byte, plugin) = "globalalignment.cma"
+archive(native) = "globalalignment.cmxa"
+archive(native, plugin) = "globalalignment.cmxs"
+exists_if = "globalalignment.cma"
+# OASIS_STOP
+
