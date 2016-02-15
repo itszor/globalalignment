@@ -11,4 +11,15 @@ Library globalalignment
   BuildTools: ocamlbuild
   Modules:    Global_alignment
   BuildDepends: bigarray
-  
+
+Executable test
+  Install: false
+  Path: .
+  BuildTools: ocamlbuild
+  MainIs: test.ml
+  CompiledObject: best
+  BuildDepends: bigarray, globalalignment
+
+Test "main"
+  TestTools: test
+  Command: $test

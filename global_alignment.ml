@@ -109,7 +109,7 @@ let partition_y score_l score_r =
   assert (l_len = r_len);
   for i = 0 to l_len - 1 do
     let score = score_l.{i} + score_r.{r_len - 1 - i} in
-    if score > !max_found then begin
+    if score >= !max_found then begin
       max_found := score;
       max_idx := i
     end
