@@ -13,7 +13,6 @@ let show_res alignment =
       | None -> Printf.printf "-")
     alignment;
   print_newline ()
-    
 
 let _ =
   let arr1 = [| "a"; "b"; "c"; "d"; "e" |]
@@ -29,8 +28,10 @@ let _ =
   show_res (Global_alignment.needleman_wunsch arr1 arr2);
   print_newline ();
   let arr1 = [| "x"; "1"; "2"; "3"; "2"; "1" |]
-  and arr2 = [| "1"; "2"; "3"; "4"; "5"; "x"; "x" |] in
-  show_res (Global_alignment.hirschberg arr1 arr2);
+  and arr2 = [| "1"; "2"; "3"; "4"; "5"; "x"; "x" |]
+  and cfg = { Global_alignment.Config.del = -2; ins = -2;
+              sub = fun a b -> if a = b then 2 else -1 } in
+  show_res (Global_alignment.hirschberg ~config:cfg arr1 arr2);
   print_newline ();
-  show_res (Global_alignment.needleman_wunsch arr1 arr2);
+  show_res (Global_alignment.needleman_wunsch ~config:cfg arr1 arr2);
   print_newline ();

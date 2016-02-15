@@ -1,8 +1,9 @@
 # OASIS_START
-# DO NOT EDIT (digest: e6f81b10c6bcaa4a3e89727d7586e8fc)
+# DO NOT EDIT (digest: 11b34fa73565d347307ec08a2a76a000)
 version = "0.1"
 description =
 "Implementation of global alignment algorithms for general arrays"
+requires = "bigarray"
 archive(byte) = "globalalignment.cma"
 archive(byte, plugin) = "globalalignment.cma"
 archive(native) = "globalalignment.cmxa"

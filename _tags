@@ -1,5 +1,5 @@
 # OASIS_START
-# DO NOT EDIT (digest: acd9151da3645c1b389238b9956eb8f1)
+# DO NOT EDIT (digest: 54a3fccfd3f85ec053f38fa338007bd1)
 # Ignore VCS directories, you can use the same kind of rule outside
 # OASIS_START/STOP if you want to exclude directories that contains
 # useless stuff for the build process
@@ -16,4 +16,5 @@ true: annot, bin_annot
 "_darcs": not_hygienic
 # Library globalalignment
 "globalalignment.cmxs": use_globalalignment
+<*.ml{,i,y}>: pkg_bigarray
 # OASIS_STOP

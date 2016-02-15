@@ -1,6 +1,21 @@
-open Config
+module Config = struct
+  type 'a params =
+    {
+      ins : int;
+      del : int;
+      sub : 'a -> 'a -> int
+    }
 
-let needleman_wunsch ?(config=default) arr1 arr2 =
+  let default =
+    {
+      ins = -1;
+      del = -1;
+      sub = fun a b -> if a = b then 1 else -1
+    }
+end
+
+let needleman_wunsch ?(config=Config.default) arr1 arr2 =
+  let open Config in
   let len1 = Array.length arr1
   and len2 = Array.length arr2 in
   let costs = Bigarray.(Array2.create int c_layout (len1 + 1) (len2 + 1)) in
@@ -56,6 +71,7 @@ let needleman_wunsch ?(config=default) arr1 arr2 =
   walk len1 len2 []
 
 let nwscore ~config arr1 arr2 =
+  let open Config in
   let len1 = Array.length arr1
   and len2 = Array.length arr2 in
   let costs = Bigarray.(Array2.create int c_layout 2 (len2 + 1)) in
@@ -108,7 +124,7 @@ let array_rev arr =
 let array_sub_rev arr start len =
   Array.init len (fun i -> arr.(start + len - 1 - i))
 
-let rec hirschberg ?(config=default) arr1 arr2 =
+let rec hirschberg ?(config=Config.default) arr1 arr2 =
   let len1 = Array.length arr1
   and len2 = Array.length arr2 in
   if len1 = 0 then

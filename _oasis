@@ -9,5 +9,6 @@ Plugins:     META (0.4)
 Library globalalignment
   Path:       .
   BuildTools: ocamlbuild
-  Modules:    Global_alignment, Config
+  Modules:    Global_alignment
+  BuildDepends: bigarray
   
