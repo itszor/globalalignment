@@ -4,6 +4,7 @@ Version:     0.1
 Synopsis:    Implementation of global alignment algorithms for general arrays
 Authors:     Julian Brown
 License:     GPL-3
+Plugins:     META (0.4)
 
 Library globalalignment
   Path:       .
